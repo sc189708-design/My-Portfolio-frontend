@@ -18,7 +18,7 @@ const Navbar = () => {
         <nav className=" fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 shadow-sm">
             <div className=" max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
                 <a href="#home" className=" text-xl font-bold text-gray-900 dark:text-white">
-                    Suraj<span className="text-blue-600">.</span>
+                    SURAJ<span className="text-blue-600"> CHANDEL</span>
                 </a>
 
                 {/* Desktop links */}
