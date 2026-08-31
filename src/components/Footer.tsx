@@ -8,7 +8,7 @@ const Footer = () => {
                     <a href="https://github.com/sc189708-design" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                         <FiGithub />
                     </a>
-                    <a href="https://linkedin.com/in/suraj" target="_blank" rel="nooper noreferrer" className="hover:text-white">
+                    <a href="https://linkedin.com/in/suraj-chandel-3b9723372" target="_blank" rel="noopener noreferrer" className="hover:text-white">
                         <FiLinkedin />
                     </a>
                     <a href="https://mailto:sc189708@gmail.com" rel="nooper noreferrer" className="hover:text-white">
