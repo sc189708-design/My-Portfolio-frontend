@@ -1,4 +1,6 @@
-import { useState, type ChangeEvent } from "react";
+import { useState } from "react";
+import type { ChangeEvent, FormEvent } from "react";
+import axios from "axios";
 
 interface FormData {
     name: string;
@@ -14,15 +16,25 @@ const Contact = () => {
     });
 
     const [status, setStatus] = useState<string>('');
+    const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        //Backend  wiring   (Express + mongoDb ) phase 4 
-        setStatus('Backen not connected yet - this is UI placeholder.');
-        console.log(formData);
+        setIsSubmitting(true);
+        setStatus('Submitting...');;
+        try {
+            await axios.post('http://localhost:5000/api/contact', formData);
+            setStatus('message send successfully');
+            setFormData({ name: '', email: '', message: '' })
+        } catch (error) {
+            console.error('Error sanding is message:', error)
+            setStatus('something is wrong plase try again')
+        } finally {
+            setIsSubmitting(false)
+        }
     };
     return (
         <section id="contact" className="max-w-2xl mx-auto px-6 py-24">
@@ -57,8 +69,9 @@ const Contact = () => {
                 />
                 <button
                     type="submit"
+                    disabled={isSubmitting}
                     className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                    Send Message
+                    { isSubmitting? 'sending...': 'SendMessage'}
                 </button>
                 {status && <p className="text-sm text-gray-500">{status}</p>}
             </form>
