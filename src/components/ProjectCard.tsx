@@ -26,9 +26,11 @@ const ProjectCard = ({ project }: ProjectCardPors) => {
 
             {/* Content Container */}
             <div className="p-6 flex flex-col ">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                    {project.title}
-                </h3>
+                <Link to={`/project/${project.id}`}>
+                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-blue-600">
+                        {project.title}
+                    </h3>
+                </Link>
                 <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm line-clamp-3">
                     {project.description}
                 </p>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { useTheme } from "../context/ThemeContext";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 
 const navLinks = [
@@ -13,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const handelLinkClick = () => setIsOpen(false);
+    const {theme, toggleTheme} = useTheme();
 
     return (
         <nav className=" fixed top-0 left-0 w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 shadow-sm">
@@ -41,6 +44,13 @@ const Navbar = () => {
                     onClick={() => setIsOpen(isOpen)}
                     aria-label="Toggle menu">
                     {isOpen ? <FiX /> : <FiMenu />}
+                </button>
+
+                <button 
+                onClick={toggleTheme}
+                aria-label="Toggle dark mode"
+                className="text-xl text-gray-700 dark:text-gray-200, hover:text-blue-600">
+                    {theme === 'light'? <FiMoon/> : <FiSun/>}
                 </button>
             </div>
 
