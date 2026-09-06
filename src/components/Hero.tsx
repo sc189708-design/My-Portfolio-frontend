@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Hero = () => {
     return (
         <section
-            id="home"
+            id="Home"
             className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
             <motion.p
                 initial={{ opacity: 0, y: - 20 }}
@@ -43,14 +43,14 @@ const Hero = () => {
                 <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    href="#projects"
+                    href="#Projects"
                     className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
                     View Projects
                 </motion.a>
                 <a href="/resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border text-white border-blue-600 rounded-lg font-medium hover:bg-50 dark:hover:bg-gray-800 transition-colors"
+                    className="px-6 py-3 border text-gray-700 dark:text-white border-blue-600 rounded-lg font-medium hover:bg-50 dark:hover:bg-gray-800 transition-colors"
                 > Resume
                 </a>
             </motion.div>

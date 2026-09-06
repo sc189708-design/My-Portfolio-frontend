@@ -69,7 +69,7 @@ const ProjectCard = ({ project }: ProjectCardPors) => {
                             rel="noopener noreferrer"
                             className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors">
                             <FiGithub size={16} />
-                            <span className="text-sm">Code</span>
+                            <span className="text-sm">code</span>
                         </a>
                         <a
                             href={project.liveDemo}

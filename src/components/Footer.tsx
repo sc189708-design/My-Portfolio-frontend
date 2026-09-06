@@ -2,7 +2,7 @@ import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const Footer = () => {
     return (
-        <footer className=" bg-gray-900 text-gray-300 py-10">
+        <footer className=" bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-10">
             <div className=" max-w-6xl mx-auto px-6 flex flex-col items-center gap-4">
                 <div className="flex gap-6 text-xl">
                     <a href="https://github.com/sc189708-design" target="_blank" rel="noopener noreferrer" className="hover:text-white">
