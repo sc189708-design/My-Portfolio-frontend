@@ -26,7 +26,7 @@ const Contact = () => {
         setIsSubmitting(true);
         setStatus('Submitting...');;
         try {
-            await axios.post('http://localhost:5000/api/contact', formData);
+            await axios.post('https://my-portfolio-backend-wx9g.onrender.com/api/contact', formData);
             setStatus('message send successfully');
             setFormData({ name: '', email: '', message: '' })
         } catch (error) {
