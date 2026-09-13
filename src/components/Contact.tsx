@@ -29,8 +29,10 @@ const Contact = () => {
             await axios.post('https://my-portfolio-backend-wx9g.onrender.com/api/contact', formData);
             setStatus('message send successfully');
             setFormData({ name: '', email: '', message: '' })
-        } catch (error) {
-            console.error('Error sanding is message:', error)
+        } catch (error: any) {
+            console.log("STATUS:", error.response?.status);
+            console.log("RESPONSE:", error.response?.data);
+            console.log("ERROR:", error);
             setStatus('something is wrong plase try again')
         } finally {
             setIsSubmitting(false)
@@ -71,7 +73,7 @@ const Contact = () => {
                     type="submit"
                     disabled={isSubmitting}
                     className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                    { isSubmitting? 'sending...': 'SendMessage'}
+                    {isSubmitting ? 'sending...' : 'SendMessage'}
                 </button>
                 {status && <p className="text-sm text-gray-500">{status}</p>}
             </form>
