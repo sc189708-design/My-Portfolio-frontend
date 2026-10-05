@@ -1,10 +1,27 @@
 import { motion } from "framer-motion";
+import zoroimg from '../assets/Zoro PNG Image.jpg'
+
+type Profile = {
+    name: string;
+    image: string;
+}
+
+const profile: Profile ={
+    name: 'suraj',
+    image: zoroimg
+}
 
 const Hero = () => {
     return (
         <section
             id="Home"
             className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
+                    <motion.img
+                    initial={{opacity: 0, y: -20}}
+                    animate={{opacity:1, y: 0}}
+                    transition={{duration: 1 , delay: 1}}
+                     src={profile.image} alt={profile.name} className="h-90 w-90 rounded-full hover:shadow-2xl object-center "
+                     />
             <motion.p
                 initial={{ opacity: 0, y: - 20 }}
                 animate={{ opacity: 1, y: 0 }}
