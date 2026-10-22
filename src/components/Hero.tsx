@@ -73,14 +73,6 @@ const Hero = () => {
                     className="px-6 py-3 border text-gray-700 dark:text-white border-blue-600 rounded-lg font-medium hover:bg-50 dark:hover:bg-gray-800 transition-colors"
                 > Resume
                 </motion.a>
-                <motion.a
-                whileHover={{scale: 1.05}}
-                whileTap={{ scale: 0.95}}
-                href="/suraj_resume.pdf"
-                download="Suraj_Resume.pdf"
-                className="px-6 py-3 border text-gray-700 dark:text-white border-e-blue-600 rounded-lg font-medium hover:bg-50 dark:hover:bg-gray-800 transition-colors">
-                    download
-                </motion.a>
             </motion.div>
         </section>
     );
