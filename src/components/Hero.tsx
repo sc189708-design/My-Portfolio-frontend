@@ -6,8 +6,8 @@ type Profile = {
     image: string;
 }
 
-const profile: Profile ={
-    name: 'suraj', 
+const profile: Profile = {
+    name: 'suraj',
     image: zoroimg
 }
 
@@ -16,12 +16,12 @@ const Hero = () => {
         <section
             id="Home"
             className="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-20">
-                    <motion.img
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                     src={profile.image} alt={profile.name} className="h-70 w-65 rounded-full hover:shadow-2xl object-cover transition-shadow duration-300 "
-                     />
+            <motion.img
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                src={profile.image} alt={profile.name} className="h-70 w-65 rounded-full hover:shadow-2xl object-cover transition-shadow duration-300 "
+            />
             <motion.p
                 initial={{ opacity: 0, y: - 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -64,12 +64,23 @@ const Hero = () => {
                     className="px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors">
                     View Projects
                 </motion.a>
-                <a href=""
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="/suraj_resume.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-6 py-3 border text-gray-700 dark:text-white border-blue-600 rounded-lg font-medium hover:bg-50 dark:hover:bg-gray-800 transition-colors"
                 > Resume
-                </a>
+                </motion.a>
+                <motion.a
+                whileHover={{scale: 1.05}}
+                whileTap={{ scale: 0.95}}
+                href="/suraj_resume.pdf"
+                download="Suraj_Resume.pdf"
+                className="px-6 py-3 border text-gray-700 dark:text-white border-e-blue-600 rounded-lg font-medium hover:bg-50 dark:hover:bg-gray-800 transition-colors">
+                    download
+                </motion.a>
             </motion.div>
         </section>
     );
