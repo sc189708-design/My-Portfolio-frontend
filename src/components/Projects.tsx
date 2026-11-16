@@ -1,18 +1,35 @@
 import { Projects as projectsData } from "../data/projects"
 import type { Project } from "../types/project"
 import ProjectCard from "./ProjectCard";
+import { motion } from "framer-motion"
 
 const Projects = () => {
+    const infiniteProjects = [...projectsData, ...projectsData];
     return (
-        <section id="Projects" className="max-w-6xl mx-auto px-6 py-24">
+        <section
+            id="Projects"
+            className="max-w-7xl mx-auto px6 py-24 overflow-hidden">
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-12 text-center">
                 My Projects
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {projectsData.map((project: Project) => (
-                    <ProjectCard key={project.id} project={project} />
+            <motion.div
+                className=" flex w-max gap-8"
+                animate={{ x: ["0", "-50%"] }}
+                transition={{
+                    duration: 35,
+                    ease: "linear",
+                    repeat: Infinity
+                }}>
+                {infiniteProjects.map((project: Project, index) => (
+                    <motion.div
+                        key={`${project.id}-${index}`}
+                        className="w-87.5 md:w-112.5 shrink-0"
+                        whileHover={{ scale: 1.2, y: -6 }}
+                        transition={{ duration: 0.3 }}>
+                            <ProjectCard project={project}/>
+                        </motion.div>
                 ))}
-            </div>
+            </motion.div>
         </section>
     );
 };

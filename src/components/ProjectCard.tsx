@@ -10,54 +10,64 @@ interface ProjectCardPors {
 const ProjectCard = ({ project }: ProjectCardPors) => {
     return (
         <motion.div
-            whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}
+            whileHover={{ y: -8, boxShadow: '0 20px 60px rgba(168,85,247,0.85)' }}
             transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all h-full flex flex-col">
+            className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden
+             hover:shadow-2xl transition-colors h-full flex flex-col border border-b-gray-200 dark:border-white/10">
             {/* Image Container */}
-            <Link to={`/project/${project.id}`} className="relative overflow-hidden block">
+            <Link to={`/project/${project.id}`} className="relative overflow-hidden block h-52">
                 <motion.img
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-48 object-cover cursor-pointer"
+                    whileHover={{ scale: 1.08 }}
+                    transition={{ duration: 0.5 }}
+                    className="h-full w-full object-cover cursor-pointer"
                 />
+                {/* {Image Gradient} */}
+                <div className=" absolute inset-0 bg-gradient-to-from-black/60 via-transparent to-transparent" />
+
+                {/* { Purple Glow} */}
+                <div className=" absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-purple-500/10 " />
             </Link>
 
             {/* Content Container */}
-            <div className="p-6 flex flex-col ">
+            <div className=" flex flex-1 flex-col p-6 ">
                 <Link to={`/project/${project.id}`}>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 hover:text-blue-600">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 hover:text-blue-600 
+                    transition-colors duration-300 group-hover:text-purple-500">
                         {project.title}
                     </h3>
                 </Link>
-                <p className="text-gray-500 dark:text-gray-300 mb-4 text-sm line-clamp-3">
+                <p className="text-gray-500 dark:text-gray-400 mb-5 leading-relaxed text-sm line-clamp-3">
                     {project.description}
                 </p>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-2">
                     {project.techStack.slice(0, 4).map((tech) => (
                         <span
                             key={tech}
-                            className="text-xs px-2 py-1 bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full">
+                            className="text-xs px-3  py-1 text-purple-600 dark:text-purple-300
+                            rounded-full border border-purple-500/20 ">
                             {tech}
                         </span>
                     ))}
                     {project.techStack.length > 4 && (
-                        <span className="text-xs px-2 py-1 bg-blue-50 dark:bg-blue-900 text-blue-600 dark:text-blue-300 rounded-full">
+                        <span className="text-xs px-3 py-1 bg-purple-500/10 text-purple-600 dark:text-purple-300 
+                        rounded-full border border-purple-500/20 ">
                             +{project.techStack.length - 4}
                         </span>
                     )}
                 </div>
 
                 {/* Actions */}
-                <div className="flex flex-col gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
+                <div className="flex flex-col gap-3 mt-auto pt-5 border-t border-gray-200 dark:border-white/10">
                     <Link to={`/project/${project.id}`}>
                         <motion.button
                             whileHover={{ x: 4 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="w-full flex items-center justify-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors">
+                            whileTap={{ scale: 0.97 }}
+                            className="flex w-full items-center justify-center gap-2 px-4 py-3 bg-purple-600
+                            hover:bg-purple-500 text-white rounded-xl font-medium transition-colors">
                             View Details
                             <FiArrowRight size={16} />
                         </motion.button>
@@ -67,15 +77,19 @@ const ProjectCard = ({ project }: ProjectCardPors) => {
                             href={project.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors">
+                            className="flex flex-1 items-center justify-center gap-2 rounded-xl border 
+                            border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-3 py3 
+                            text-gray-700 dark:text-gray-300 hover:border-purple-500/40 hover:text-purple-500 transition-all">
                             <FiGithub size={16} />
-                            <span className="text-sm">code</span>
+                            <span className="text-sm">Code</span>
                         </a>
                         <a
                             href={project.liveDemo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 flex items-center justify-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 rounded-lg transition-colors">
+                            className="flex flex-1 items-center justify-center gap-2 rounded-xl border 
+                            border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-3 py3 
+                            text-gray-700 dark:text-gray-300 hover:border-purple-500/40 hover:text-purple-500 transition-all">
                             <FiExternalLink size={16} />
                             <span className="text-sm">Demo</span>
                         </a>
