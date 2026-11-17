@@ -10,9 +10,9 @@ interface ProjectCardPors {
 const ProjectCard = ({ project }: ProjectCardPors) => {
     return (
         <motion.div
-            whileHover={{ y: -8, boxShadow: '0 20px 60px rgba(168,85,247,0.85)' }}
+            whileHover={{ y: -4, boxShadow: '0 20px 60px rgba(168,85,247,0.15)' }}
             transition={{ duration: 0.3 }}
-            className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden
+            className=" group relative bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden
              hover:shadow-2xl transition-colors h-full flex flex-col border border-b-gray-200 dark:border-white/10">
             {/* Image Container */}
             <Link to={`/project/${project.id}`} className="relative overflow-hidden block h-52">
