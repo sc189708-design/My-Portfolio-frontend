@@ -83,6 +83,16 @@ const ProjectCard = ({ project }: ProjectCardPors) => {
                             <FiGithub size={16} />
                             <span className="text-sm">Code</span>
                         </a>
+                        <a
+                            href={project.liveDemo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex flex-1 items-center justify-center gap-2 rounded-xl border 
+                            border-gray-200 dark:border-white/10 bg-gray-50 dark:bg-white/5 px-3 py3 
+                            text-gray-700 dark:text-gray-300 hover:border-purple-500/40 hover:text-purple-500 transition-all">
+                            <FiExternalLink size={16} />
+                            <span className="text-sm">Demo</span>
+                        </a>
                     </div>
                 </div>
             </div>
