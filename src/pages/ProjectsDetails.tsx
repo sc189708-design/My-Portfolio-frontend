@@ -54,7 +54,7 @@ const ProjectDetails = () => {
                         transition={{ duration: 0.5 }}>
                         <Link
                             to="/"
-                            className=" inline-flex items-center text-gray-400 gap-2 hover:text-purple-400 transition-colors mb-12 group">
+                            className=" inline-flex items-center text-black dark:text-white gap-2 hover:text-purple-400 transition-colors mb-12 group">
                             <FiArrowLeft className=" group-hover:-translate-x-1 transition-transform" />
                             Back to Home
                         </Link>
@@ -72,11 +72,11 @@ const ProjectDetails = () => {
                                 Featured Project
                             </span>
                         </div>
-                        <h1 className=" text-4xl md:text-6xl font-bold tracking-tight mb-6">
+                        <h1 className=" text-4xl md:text-6xl font-bold tracking-tight mb-6 text-black dark:text-white">
                             {project.title}
                         </h1>
 
-                        <p className="max-w-3xl text-gray-400 text-base md:text-lg leading-relaxed">
+                        <p className="max-w-3xl text-black dark:text-white text-base md:text-lg leading-relaxed">
                             {project.description}
                         </p>
                     </motion.div>
@@ -95,7 +95,7 @@ const ProjectDetails = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
+                                className="w-full aspect-video object-cover transition-transform duration-700 group-hover:scale-105 "
                             />
                         </div>
                     </motion.div>
@@ -111,12 +111,12 @@ const ProjectDetails = () => {
                         >
                             <div className="flex items-center gap-3 mb:5">
                                 <FiLayers className="text-purple-400 text-xl" />
-                                <h2 className="text-2xl font-semibold">
+                                <h2 className="text-2xl font-semibold text-black dark:text-white">
                                     About This Project
                                 </h2>
                             </div>
 
-                            <p className="text-gray-400 leading-8">
+                            <p className="text-gray-600 dark:text-white leading-8">
                                 {project.description}
                             </p>
                         </motion.div>
@@ -135,7 +135,7 @@ const ProjectDetails = () => {
                                 {project.techStack.map((tech) => (
                                     <span
                                         key={tech}
-                                        className="px-3 py-2 text-sm rounded-lg border border-purple-500/10 bg-purple-600 hover:bg-purple-500/20 
+                                        className="px-3 py-2 text-sm rounded-lg border border-purple-500/10 bg-purple-600 hover:bg-purple-500 
                                     hover:border-purple-200/50 transition-colors">
                                         {tech}
                                     </span>
@@ -152,7 +152,7 @@ const ProjectDetails = () => {
                         transition={{ delay: 0.4, duration: 0.5 }}
                         className="mt-14 pt-8 border-t border-white/10"
                     >
-                        <h2 className="text-xl font-semibold mb-6">
+                        <h2 className="text-xl font-semibold mb-6 text-black dark:text-white">
                             Explore This Project
                         </h2>
                         
@@ -176,7 +176,7 @@ const ProjectDetails = () => {
                             href={project.liveDemo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-flex items-center justify-center gap-3 px-7 py-4 roundedxl bg-purple-600
+                            className="inline-flex items-center justify-center gap-3 px-7 py-4 rounded-xl bg-purple-600
                             hover:bg-purple-500 text-white font-medium shadow-lg shadow-purple-600/20 transition-colors">
                                 <FiExternalLink  size={20}/>
                                 Live Demo
