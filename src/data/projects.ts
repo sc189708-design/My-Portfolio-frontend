@@ -2,6 +2,7 @@ import type { Project } from "../types/project";
 import socialMediaImage from '../assets/socialmedia.jpg'
 import myai from '../assets/myai.jpg'
 import musicPlayer from '../assets/music.jpg'
+import Gallery from '../assets/gallery.jpg'
 
 export const Projects: Project[] = [
     {
@@ -29,6 +30,15 @@ export const Projects: Project[] = [
         image: musicPlayer,
         techStack: ['React', 'typeScript', 'node.js', 'express.js', 'mongoDB', 'farmer-motion'],
         githubLink: "https://github.com/sc189708-design/music-player",
+        liveDemo: 'https://myPortfolio.com'
+    },
+    {
+        id: "project-4",
+        title: "Phot-Gallery",
+        description: 'A Mern stack pohot-gallery web application and you upload your img and download other images ',
+        image: Gallery,
+        techStack: ['React', 'JavaScript'],
+        githubLink: "https://github.com/sc189708-design/photo-gallery",
         liveDemo: 'https://myPortfolio.com'
     }
 ];
